@@ -18,7 +18,7 @@ const handleErrors= (err)=>{
         return errors;
     } 
     if(err.message === "Email not found"){
-        errors.email= "That email is not registered"
+        errors.email= "That email is not registered";
     }
     if(err.message=== "incorrect password"){
         errors.password="Incorrect password";
@@ -64,8 +64,11 @@ const Login = async(req,res,next)=>{
           httpOnly:false,
           maxAge: maxAge*1000
       })
+      res.json({user:User._id,status:true});
        }catch(err){
-    
+        console.log(err);
+        const errors=handleErrors(err)
+        res.json({errors, status:false});
        } 
  }
 

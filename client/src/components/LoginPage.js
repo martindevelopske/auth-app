@@ -46,9 +46,11 @@ function LoginPage() {
             const {email,password}=data.errors;
             if(email){
               generateError(email);
+              return true;
             } else if(password){
               generateError(password);
-            }
+              return true;
+            } return false;
           }
         } else{
           console.log("no data");
