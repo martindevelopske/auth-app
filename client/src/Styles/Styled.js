@@ -1,9 +1,18 @@
 import styled from 'styled-components'
 
 export const StyledHeader=styled.div`
-margin: 32px;
+
 display: flex;
 justify-content: space-around;
+width:100%;
+height:60px;
+background-color:grey;
+& a{
+    margin:22px;
+    color:white;
+    text-decoration:none;
+    font-size: 1.2em;
+}
 `
 
 export const StyledDiv=styled.div`
